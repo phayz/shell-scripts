@@ -1,6 +1,6 @@
 #! /bin/bash
 # echo $1
-if [ -e publican.cfg ] 
+if [ -e publican.cfg ]
 then
 	publican build --langs=en-US --formats=html,html-single
 	if [ $? = 0 ] && [ -z "$1" ]
@@ -8,9 +8,9 @@ then
 		quickview
 	elif [ "$1" == "--noview" ]
 	then
-		echo "Not displaying book. Please refresh Firefox."
+		echo "Not displaying book. Please refresh your web browser."
 	else
-		echo "Error with publican. Not opening in Firefox."
+		echo "Error with publican. Not opening in web browser."
 	fi
 elif [ -e master.adoc ]
 then
@@ -19,10 +19,10 @@ then
 		ccutil compile --format html-single --lang en-US --open > /dev/null 2> /dev/null
         elif [ "$1" == "--noview" ]
         then
-		ccutil compile --format html-single --lang en-US 
-                echo "Not displaying book. Please refresh Firefox."
+		ccutil compile --format html-single --lang en-US
+                echo "Not displaying book. Please refresh your web browser."
         else
-                echo "Error with ccutil. Not opening in Firefox."
+                echo "Error with ccutil. Not opening in your web browser."
         fi
 else
 	echo "No book found"
