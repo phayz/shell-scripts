@@ -1,0 +1,53 @@
+# Enable auto-scaling of Qt-based apps (Dropbox etc)
+export QT_AUTO_SCREEN_SCALE_FACTOR=2
+
+# Set default editor to nano
+export EDITOR=nano
+
+# Enable git enhancements to the prompt
+##source /home/rdickens/.oh-my-git/prompt.sh
+GIT_PROMPT_THEME=Single_line_Russell
+source ~/.bash-git-prompt/gitprompt.sh
+##source ~/.bash-powerline.sh
+##source ~/.powerline-bash.sh
+##source ~/.powerbash.sh
+##source ~/.bashrc.theme.sh
+
+##function _update_ps1() {
+##    PS1="$(~/powerline-go -modules ssh,cwd,git,exit -error $? -newline -cwd-max-depth 2 -cwd-max-dir-size 30)"
+##}
+
+##if [ "$TERM" != "linux" ]; then
+##    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+##fi
+
+# Aliases
+# -------
+
+# User specific aliases and functions
+alias whitenoise='play -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120 gain +14'
+alias ll='ls -l'
+
+# Documentation-specific aliases
+alias dbuild='ccutil compile --lang=en-US --format=html-single'
+alias dview='ccutil compile --lang=en-US --format=html-single --open'
+
+# Application launchers
+alias ffb="~/bin/firefox_beta/firefox -P firefox_beta -no-remote       > /dev/null 2>&1 &"
+alias ffn="~/bin/firefox_nightly/firefox -P firefox_nightly -no-remote > /dev/null 2>&1 &"
+alias ffe="~/bin/firefox_esr/firefox -P firefox_esr -no-remote         > /dev/null 2>&1 &"
+alias chd=~/repos/chromium-latest-linux/run.sh
+alias ffp="~/bin/firefox_personal/firefox -P firefox_personal -no-remote > /dev/null 2>&1 &"
+###alias cht=~/repos/chromium-latest-linux/run_temporary.sh
+
+# User specific environment and startup programs
+
+# Functions
+# ---------
+
+function qlssh {
+	ssh -i ~/.ssh/quicklab.key -o "UserKnownHostsFile /dev/null" -o "StrictHostKeyChecking no" cloud-user@$1
+}
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH
