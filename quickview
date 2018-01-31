@@ -1,0 +1,2 @@
+#! /bin/bash
+google-chrome-stable ./tmp/en-US/html-single/index.html &> /dev/null &

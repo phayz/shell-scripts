@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Launch Firefox Nightly with the Nightly profile.
+#
+
+$HOME/opt/firefox_nightly/firefox -P firefox_nightly $1 &
